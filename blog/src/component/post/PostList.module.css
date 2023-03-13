@@ -1,0 +1,7 @@
+.postList >li{
+  border-bottom: 1px solid white;
+}
+
+.postList >li:last-child {
+  border-bottom: none;
+}
