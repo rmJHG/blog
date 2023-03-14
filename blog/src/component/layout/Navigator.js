@@ -8,9 +8,9 @@ function Navigator() {
   const isLogin = userLoginContext.LoginInfo;
   let content;
   if (isLogin) {
-    content = <Link to="/login">Write</Link>;
+    content = <Link to="/helllllo">Write</Link>;
   } else {
-    content = <Link to="/login">Login</Link>;
+    content = <Link to="/helllllo">Login</Link>;
   }
 
   return (

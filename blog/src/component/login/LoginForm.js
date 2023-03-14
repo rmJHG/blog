@@ -12,12 +12,13 @@ function LoginForm() {
     password: "",
   };
 
-  axios("https://myblog-jhg-default-rtdb.firebaseio.com/id.json").then((res) => {
+  axios.get("https://myblog-jhg-default-rtdb.firebaseio.com/id.json").then((res) => {
     userData = {
       id: res.data.id,
       password: res.data.password,
     };
   });
+
 
   const inputUserName = useRef();
   const inputUserPassword = useRef();
@@ -33,6 +34,7 @@ function LoginForm() {
     }
   }
 
+  
   return (
     <section className={classes.loginBox}>
       <form name="form1" onSubmit={onSubmitLogin}>

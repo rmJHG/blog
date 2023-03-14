@@ -4,6 +4,7 @@ import axios from "axios";
 
 function Main() {
   const [lodingPost, setLodingPost] = useState([]);
+  
   useEffect(() => {
     axios("https://myblog-jhg-default-rtdb.firebaseio.com/post.json").then((res) => {
       const posts = [];
@@ -16,8 +17,9 @@ function Main() {
         posts.push(post);
       }
       setLodingPost(posts);
+    
     });
-  });
+  },[]);
 
   return (
     <div>

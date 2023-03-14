@@ -2,6 +2,7 @@ import classes from "./PostList.module.css";
 import Post from "./Post";
 
 function PostList(props) {
+
   return (
     <ul className={classes.postList}>
       {props.postData.map((post) => (
