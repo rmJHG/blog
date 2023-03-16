@@ -1,12 +1,11 @@
 import classes from "./Edit.module.css";
-import { useContext, useRef} from "react";
+import { useContext, useRef } from "react";
 import EditInfo from "../store/isEdit";
 import axios from "axios";
 
 
-
 function Edit(props) {
-    
+
   const editContext = useContext(EditInfo);
   const editTitle = useRef();
   const editText = useRef();
@@ -14,25 +13,24 @@ function Edit(props) {
   function editBtn() {
     const enterTitle = editTitle.current.value;
     const enterText = editText.current.value;
-    axios.put(`https://myblog-jhg-default-rtdb.firebaseio.com/post/${props.id}.json`, {
+    axios.put(`https://myblog-jhg-default-rtdb.firebaseio.com/post/${editContext.postId}.json`, {
       title: enterTitle,
       text: enterText,
-    });
-    editContext.exitEdit();
+    }).then(()=>editContext.exitEdit());
+    
   }
 
   function cancelBtn() {
-    console.log( props.postId);
     editContext.exitEdit();
+
   }
 
   return (
     <div className={classes.background}>
       <form name="3" className={classes.editForm}>
-
         <div>
           <label htmlFor="title"> 제목</label>
-          <input type="text" id="title"  ref={editTitle} />
+          <input type="text" id="title" ref={editTitle} />
         </div>
 
         <div>
@@ -44,7 +42,6 @@ function Edit(props) {
           <input type="button" value="수정" onClick={editBtn} />
           <input type="button" value="취소" onClick={cancelBtn} />
         </div>
-
       </form>
     </div>
   );

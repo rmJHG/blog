@@ -1,32 +1,42 @@
 import { useState, createContext } from "react";
 
-const EditInfo = createContext(
-  {
-    isOpen: false,
-    openEdit: () => {},
-    exitEdit: () => {},
-    editPoint:() => {},
-  },
-);
+const EditInfo = createContext({
+  isOpen: false,
+  postId: 0,
+  refreshNum: 0,
+  openEdit: () => {},
+  exitEdit: () => {},
+  refresh: () => {},
+});
 
 export function EditContextProvider(props) {
+  const [pageRefresh, setPageRefresh] = useState(-1);
   const [isOpenEdit, setIsOpenEdit] = useState(false);
+  const [postId, setPostId] = useState(0);
+  function refresh() {
+    setPageRefresh(pageRefresh * -1);
+  }
 
-  function setOpenEdit() {
+
+  function setOpenEdit(id) {
+    setPostId(id);
     setIsOpenEdit(true);
+
+    
   }
   function setExitEdit() {
     setIsOpenEdit(false);
+    refresh()
   }
 
-
-  const EditValue = 
-    {
-      isOpen: isOpenEdit,
-      openEdit: setOpenEdit,
-      exitEdit: setExitEdit,
-
-    };
+  const EditValue = {
+    isOpen: isOpenEdit,
+    postId: postId,
+    refreshNum: pageRefresh,
+    openEdit: setOpenEdit,
+    exitEdit: setExitEdit,
+    refresh: refresh,
+  };
   return <EditInfo.Provider value={EditValue}>{props.children}</EditInfo.Provider>;
 }
 

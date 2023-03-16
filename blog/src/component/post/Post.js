@@ -1,35 +1,24 @@
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import UserLoginInfo from "../store/isLogin";
 import Edit from "./Edit";
 import EditInfo from "../store/isEdit";
-
 import classes from "./Post.module.css";
 
 function Post(props) {
-  // const loadTitle = props.title;
-  // const loadText = props.Text;
-  const loadId = props.id;
-
-
-  const nav = useNavigate();
   const userLoginContext = useContext(UserLoginInfo);
   const isLogin = userLoginContext.LoginInfo;
   const editContext = useContext(EditInfo);
   const openEditStatus = editContext.isOpen;
+  const postId = props.id;
 
   function editBtn() {
-    console.log(props.id);
-    editContext.openEdit();
+    editContext.openEdit(postId);
   }
 
   function delBtn() {
-    const postId = props.id;
-    axios.delete(`https://myblog-jhg-default-rtdb.firebaseio.com/post/${postId}.json`).then(() => {
-      nav("/");
-    });
+    axios.delete(`https://myblog-jhg-default-rtdb.firebaseio.com/post/${postId}.json`).then(() => editContext.refresh());
   }
 
   return (
@@ -51,7 +40,7 @@ function Post(props) {
       </div>
       <p className={classes.postText}>{props.text}</p>
 
-          {openEditStatus && <Edit postId={loadId} />}
+      {openEditStatus && <Edit />}
     </li>
   );
 }

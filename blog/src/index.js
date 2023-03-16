@@ -6,15 +6,13 @@ import { BrowserRouter } from "react-router-dom";
 import { UserLoginInfoProvider } from "./component/store/isLogin";
 import { EditContextProvider } from "./component/store/isEdit";
 
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <UserLoginInfoProvider>
     <EditContextProvider>
-    <BrowserRouter>
-
-      <App />
-    </BrowserRouter>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </EditContextProvider>
   </UserLoginInfoProvider>
 );

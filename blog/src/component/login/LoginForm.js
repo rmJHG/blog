@@ -19,7 +19,6 @@ function LoginForm() {
     };
   });
 
-
   const inputUserName = useRef();
   const inputUserPassword = useRef();
 
@@ -34,7 +33,6 @@ function LoginForm() {
     }
   }
 
-  
   return (
     <section className={classes.loginBox}>
       <form name="form1" onSubmit={onSubmitLogin}>

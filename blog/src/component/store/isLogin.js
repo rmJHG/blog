@@ -9,7 +9,7 @@ const UserLoginInfo = createContext({
 export function UserLoginInfoProvider(props) {
   const [isLogin, setIsLogin] = useState(false);
   function userOnline() {
-    setIsLogin(true)
+    setIsLogin(true);
   }
 
   function userOffline() {

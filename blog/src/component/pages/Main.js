@@ -1,10 +1,15 @@
 import PostList from "../post/PostList";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
+import EditInfo from "../store/isEdit";
 
 function Main() {
-  const [lodingPost, setLodingPost] = useState([]);
-  
+  const [loadingPost, setLoadingPost] = useState([]);
+  const editContext = useContext(EditInfo);
+  const reload = editContext.refreshNum;
+
+
+ 
   useEffect(() => {
     axios("https://myblog-jhg-default-rtdb.firebaseio.com/post.json").then((res) => {
       const posts = [];
@@ -16,14 +21,13 @@ function Main() {
         };
         posts.push(post);
       }
-      setLodingPost(posts);
-    
+      setLoadingPost(posts);
     });
-  },[]);
+  }, [reload]);
 
   return (
     <div>
-      <PostList postData={lodingPost} />
+      <PostList postData={loadingPost} />
     </div>
   );
 }
