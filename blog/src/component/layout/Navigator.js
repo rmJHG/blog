@@ -8,7 +8,7 @@ function Navigator() {
   const isLogin = userLoginContext.LoginInfo;
   let content;
   if (isLogin) {
-    content = <Link to="/user">Write</Link>;
+    content = <Link to="/blog/user">Write</Link>;
   } else {
     content = <Link to="/user">Login</Link>;
   }
@@ -18,7 +18,7 @@ function Navigator() {
       <nav>
         <ul className={classes.navUl}>
           <li>
-            <Link to="/">Main</Link>
+            <Link to="/blog">Main</Link>
           </li>
           <li>
             <p>{content}</p>
