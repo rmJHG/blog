@@ -21,7 +21,7 @@ function Write() {
       header: {
         "Content-Type": "application/json",
       },
-    }).then((res) => nav("/blog/"));
+    }).then((res) => nav("/"));
   }
 
   return (
