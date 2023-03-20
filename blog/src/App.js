@@ -8,7 +8,7 @@ import Layout from "./component/layout/Layout";
 function App() {
   return (
     <Layout>
-      <Routes baseName={"/blog"}>
+      <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/user" element={<Login />} />
       </Routes>
