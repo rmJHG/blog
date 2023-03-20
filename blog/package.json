@@ -1,6 +1,6 @@
 {
   "proxy": "https://myblog-jhg-default-rtdb.firebaseio.com/",
-  "homepage": "http://rmJHG.github.io/blog",
+  "homepage": "https://rmJHG.github.io/blog",
   "name": "blog",
   "version": "0.1.0",
   "private": true,
