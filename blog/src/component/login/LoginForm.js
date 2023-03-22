@@ -35,16 +35,15 @@ function LoginForm() {
 
   return (
     <section className={classes.loginBox}>
-      <form name="form1" onSubmit={onSubmitLogin}>
+      <form name="form1" onSubmit={onSubmitLogin} className={classes.loginForm}>
         <div className={classes.loginInputBox}>
-          <label htmlFor="userName">아이디</label>
-          <input type="text" required id="userName" ref={inputUserName} />
+          <input type="text" required ref={inputUserName} placeholder="아이디" />
         </div>
         <div className={classes.loginInputBox}>
-          <label htmlFor="userPassword">비밀번호</label>
-          <input type="password" required id="userPassword" ref={inputUserPassword} />
+          <input type="password" required ref={inputUserPassword} placeholder="비밀번호" />
         </div>
-        <div>
+
+        <div className={classes.loginBtnBox}>
           <button>로그인</button>
         </div>
       </form>

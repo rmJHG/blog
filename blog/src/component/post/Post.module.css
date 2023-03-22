@@ -14,6 +14,8 @@
   align-items: center;
 }
 .postBtnBox button {
+  height: 1.5rem;
+  width: 3rem;
   margin-right: 0.8rem;
   font-size: 1rem;
   border: none;

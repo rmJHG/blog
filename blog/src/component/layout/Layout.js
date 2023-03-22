@@ -3,8 +3,8 @@ import classes from "./Layout.module.css";
 
 function Layout(props) {
   return (
-    <div>
-      <Navigator />
+    <div className={classes.layout}>
+      <Navigator/>
       <main className={classes.mainPage}>{props.children}</main>
     </div>
   );
