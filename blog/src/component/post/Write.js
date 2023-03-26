@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import classes from "./Write.module.css";
 
 function Write() {
   const nav = useNavigate();
@@ -25,18 +26,21 @@ function Write() {
   }
 
   return (
-    <section>
-      <form name="form2" onSubmit={AddPost}>
-        <div>
-          <label htmlFor="title">제목</label>
-          <input type="text" id="title" ref={inputTitle} />
+    <section className={classes.writeBox}>
+      <form name="form2" onSubmit={AddPost} className={classes.form}>
+        <div className={classes.title}>
+          {/* <label htmlFor="title">제목</label> */}
+          <input type="text" id="title" ref={inputTitle} placeholder="제목" />
         </div>
-        <div>
-          <label htmlFor="text">내용</label>
-          <input type="text" id="text" ref={inputText} />
+
+        <div className={classes.text}>
+          {/* <label htmlFor="text">내용</label> */}
+        <textarea placeholder="내용" name="" id="" cols="30" rows="10" ref={inputText}></textarea>
+          {/* <input type="textarea" id="text" ref={inputText} placeholder="내용"/> */}
         </div>
-        <div>
-          <button>포스트</button>
+
+        <div className={classes.btn}>
+          <button>글쓰기</button>
         </div>
       </form>
     </section>

@@ -11,7 +11,6 @@
   justify-items: center;
   width: 30rem;
   height: 30rem;
-  /* border: 1px solid white; */
 }
 
 .loginInputBox {
@@ -31,7 +30,6 @@
 
 }
 .loginInputBox > input:focus {
-  /* outline: 1px solid blue; */
   border: 1px solid white;
 }
 
