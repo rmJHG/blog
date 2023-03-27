@@ -27,13 +27,13 @@ function Edit(props) {
     <div className={classes.background} onClick={cancelBtn}>
       <form name="3" className={classes.editForm}>
         <div>
-          <label htmlFor="title">제목</label>
           <input type="text" id="title" ref={editTitle} value={editContext.postData.title}/>
         </div>
 
         <div>
-          <label htmlFor="text"> 내용</label>
-          <input type="text" id="text" ref={editText} value={editContext.postData.text}/>
+          {/* <label htmlFor="text"> 내용</label> */}
+          {/* <input type="text" id="text" r value=/> */}
+          <textarea id="text" cols="30" ref={editText} rows="10">{editContext.postData.text}</textarea>
         </div>
 
         <div>

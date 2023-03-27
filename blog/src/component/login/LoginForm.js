@@ -1,10 +1,11 @@
 import axios from "axios";
-import { useRef, useContext } from "react";
+import { useRef, useContext, useState } from "react";
 import UserLoginInfo from "../store/isLogin";
 import classes from "./LoginForm.module.css";
 import { useNavigate } from "react-router-dom";
 
 function LoginForm() {
+  const [loginError, setLoginError] = useState(false);
   const userLoginContext = useContext(UserLoginInfo);
   const confirmNav = useNavigate();
   let userData = {
@@ -30,20 +31,28 @@ function LoginForm() {
     if (userData.id === enterUserName && String(userData.password) === enterUserPassword) {
       userLoginContext.online();
       confirmNav("/");
+    } else {
+      setLoginError(true);
     }
   }
 
   return (
     <section className={classes.loginBox}>
       <form name="form1" onSubmit={onSubmitLogin} className={classes.loginForm}>
+        {loginError && (
+          <div className={classes.loginErrorBox}>
+            <p>아이디 또는 비밀번호를 잘못 입력하셨거나 등록되지 않은 아이디입니다.</p>
+          </div>
+        )}
         <div className={classes.loginInputBox}>
           <input type="text" required ref={inputUserName} placeholder="아이디" />
         </div>
+
         <div className={classes.loginInputBox}>
           <input type="password" required ref={inputUserPassword} placeholder="비밀번호" />
         </div>
 
-        <div className={classes.loginBtnBox}>
+        <div className={classes.loginInputBox}>
           <button>로그인</button>
         </div>
       </form>
