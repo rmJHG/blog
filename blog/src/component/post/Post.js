@@ -1,8 +1,6 @@
-import { useContext } from "react";
 import axios from "axios";
-
+import { useContext } from "react";
 import UserLoginInfo from "../store/isLogin";
-import Edit from "./Edit";
 import EditInfo from "../store/isEdit";
 import classes from "./Post.module.css";
 
@@ -10,7 +8,7 @@ function Post(props) {
   const userLoginContext = useContext(UserLoginInfo);
   const isLogin = userLoginContext.LoginInfo;
   const editContext = useContext(EditInfo);
-  const openEditStatus = editContext.isOpen;
+
 
   function editBtn() {
     editContext.openEdit(props);
@@ -38,8 +36,6 @@ function Post(props) {
         </div>
       </div>
       <p className={classes.postText}>{props.text}</p>
-
-      {openEditStatus && <Edit />}
     </li>
   );
 }
