@@ -12,11 +12,11 @@ function PostList(props) {
 
   return (
     <ul className={classes.postList}>
-      
+      {openEditStatus && <Edit />}
       {props.postData.map((post) => (
         <Post postList={props} id={post.id} title={post.title} text={post.text} />
       ))}
-       {openEditStatus && <Edit />}
+       
     </ul>
   );
 }

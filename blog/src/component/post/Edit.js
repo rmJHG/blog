@@ -9,6 +9,7 @@ function Edit(props) {
   const editText = useRef();
 
   function editBtn(event) {
+    event.stopPropagation();
     const enterTitle = editTitle.current.value;
     const enterText = editText.current.value;
     axios
@@ -20,30 +21,31 @@ function Edit(props) {
   }
 
   function cancelBtn(event) {
-
     editContext.exitEdit();
   }
 
   return (
-    <div className={classes.background}>
-      
-        <form name="3" className={classes.editForm}>
-          <div className={classes.editBox}>
-            <textarea id="title" cols="30" rows="1" ref={editTitle}>{editContext.postData.title}</textarea>
-          </div>
+    <div>
+      <div className={classes.background} onClick={cancelBtn} />
 
-          <div className={classes.editBox}>
-            <textarea id="text" cols="30" ref={editText} rows="10">
-              {editContext.postData.text}
-            </textarea>
-          </div>
+      <form name="3" className={classes.editForm}>
+        <div className={classes.editBox}>
+          <textarea id="title" cols="30" rows="1" spellCheck="false" ref={editTitle}>
+            {editContext.postData.title}
+          </textarea>
+        </div>
 
-          <div className={classes.editBtnBox}>
-            <input type="button" value="수정" onClick={editBtn} />
-            <input type="button" value="취소" onClick={cancelBtn} />
-          </div>
-        </form>
-      
+        <div className={classes.editBox}>
+          <textarea id="text" cols="30" ref={editText} rows="10" spellCheck="false">
+            {editContext.postData.text}
+          </textarea>
+        </div>
+
+        <div className={classes.editBtnBox}>
+          <input type="button" value="수정" onClick={editBtn} />
+          <input type="button" value="취소" onClick={cancelBtn} />
+        </div>
+      </form>
     </div>
   );
 }

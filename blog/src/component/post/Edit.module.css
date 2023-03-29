@@ -1,4 +1,5 @@
 .background {
+  z-index: 2;
   position: fixed;
   display: flex;
   top: 0;
@@ -9,6 +10,7 @@
 }
 
 .editForm {
+  z-index: 5;
   width: 50%;
   height: 50%;
   background-color: rgb(50, 50, 50);
