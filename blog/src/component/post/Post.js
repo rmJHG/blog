@@ -9,13 +9,14 @@ function Post(props) {
   const isLogin = userLoginContext.LoginInfo;
   const editContext = useContext(EditInfo);
 
-
   function editBtn() {
     editContext.openEdit(props);
   }
 
   function delBtn() {
-    axios.delete(`https://myblog-jhg-default-rtdb.firebaseio.com/post/${props.id}.json`).then(() => editContext.refresh());
+    axios
+      .delete(`https://myblog-jhg-default-rtdb.firebaseio.com/post/${props.id}.json`)
+      .then(() => editContext.refresh());
   }
 
   return (

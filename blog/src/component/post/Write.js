@@ -35,7 +35,7 @@ function Write() {
 
         <div className={classes.text}>
           {/* <label htmlFor="text">내용</label> */}
-        <textarea placeholder="내용" name="" id="" cols="30" rows="10" spellCheck="false" ref={inputText}></textarea>
+          <textarea placeholder="내용" name="" id="" cols="30" rows="10" spellCheck="false" ref={inputText}></textarea>
           {/* <input type="textarea" id="text" ref={inputText} placeholder="내용"/> */}
         </div>
 

@@ -4,7 +4,7 @@ import classes from "./Layout.module.css";
 function Layout(props) {
   return (
     <div className={classes.layout}>
-      <Navigator/>
+      <Navigator />
       <main className={classes.mainPage}>{props.children}</main>
     </div>
   );

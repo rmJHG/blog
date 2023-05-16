@@ -8,8 +8,6 @@ function Main() {
   const editContext = useContext(EditInfo);
   const reload = editContext.refreshNum;
 
-
- 
   useEffect(() => {
     axios("https://myblog-jhg-default-rtdb.firebaseio.com/post.json").then((res) => {
       const posts = [];

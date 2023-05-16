@@ -12,29 +12,26 @@ const EditInfo = createContext({
 export function EditContextProvider(props) {
   const [pageRefresh, setPageRefresh] = useState(-1);
   const [isOpenEdit, setIsOpenEdit] = useState(false);
-  const [postId, setPostId] =useState(0);
+  const [postId, setPostId] = useState(0);
   const [postData, setPostData] = useState(0);
   function refresh() {
     setPageRefresh(pageRefresh * -1);
   }
 
-
   function setOpenEdit(data) {
-    setPostId(data.id)
+    setPostId(data.id);
     setPostData(data);
     setIsOpenEdit(true);
-
-    
   }
   function setExitEdit() {
     setIsOpenEdit(false);
-    refresh()
+    refresh();
   }
 
   const EditValue = {
     isOpen: isOpenEdit,
     postData: postData,
-    postId : postId,
+    postId: postId,
     refreshNum: pageRefresh,
     openEdit: setOpenEdit,
     exitEdit: setExitEdit,
