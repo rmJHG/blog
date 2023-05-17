@@ -6,12 +6,6 @@ import { useContext } from "react";
 function Navigator() {
   const userLoginContext = useContext(UserLoginInfo);
   const isLogin = userLoginContext.LoginInfo;
-  let content;
-  if (isLogin) {
-    content = <Link to="/user">Write</Link>;
-  } else {
-    content = <Link to="/user">Login</Link>;
-  }
 
   return (
     <header className={classes.header}>
@@ -20,9 +14,7 @@ function Navigator() {
           <li>
             <Link to="/">Main</Link>
           </li>
-          <li>
-            <p>{content}</p>
-          </li>
+          <li>{isLogin ? <Link to="/write">Write</Link> : <Link to="/user">Login</Link>}</li>
         </ul>
       </nav>
     </header>

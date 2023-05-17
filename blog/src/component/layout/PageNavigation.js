@@ -21,7 +21,8 @@ function PageNavigation(props) {
     }
     totalPageData.push(pageData);
   }
-  console.log(totalPageData);
+  // console.log(totalPageData);
+
   return (
     <div>
       <input type="button" value="<" />

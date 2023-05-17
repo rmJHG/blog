@@ -2,11 +2,16 @@ import axios from "axios";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "./Write.module.css";
+import { useEffect } from "react";
+import { useContext } from "react";
+import UserLoginInfo from "../store/isLogin";
 
 function Write() {
   const nav = useNavigate();
   const inputTitle = useRef();
   const inputText = useRef();
+  const userLoginContext = useContext(UserLoginInfo);
+  const isLogin = userLoginContext.LoginInfo;
 
   function AddPost(event) {
     event.preventDefault();
@@ -24,6 +29,12 @@ function Write() {
       },
     }).then((res) => nav("/"));
   }
+
+  useEffect(() => {
+    if (!isLogin) {
+      nav("/");
+    }
+  });
 
   return (
     <section className={classes.writeBox}>
