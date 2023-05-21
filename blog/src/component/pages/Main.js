@@ -33,7 +33,7 @@ function Main() {
   }, [reload]);
 
   if (isLoading) {
-    return <div>로딩중이거나 로딩된 페이지가 없습니다.</div>;
+    return <div>로딩중..</div>;
   }
   return (
     <div>

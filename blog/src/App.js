@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/user" element={<Login />} />
-        <Route path="/write" element={<Write/>} />
+        <Route path="/write" element={<Write />} />
       </Routes>
     </Layout>
   );

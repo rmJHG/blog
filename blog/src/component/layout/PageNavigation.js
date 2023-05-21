@@ -1,4 +1,5 @@
 import PageNavigationBtn from "./PageNavigationBtn";
+import classes from "./PageNavigation.module.css";
 
 function PageNavigation(props) {
   let totalPosts = Math.ceil(props.postData.length / 10);
@@ -24,15 +25,18 @@ function PageNavigation(props) {
   // console.log(totalPageData);
 
   return (
-    <div>
-      <input type="button" value="<" />
-      <ul>
-        {totalPageData.map((pageData, index) => (
-          <PageNavigationBtn pageData={pageData} index={index} />
-        ))}
-      </ul>
+    <div className={classes.pageNav}>
+      <input type="button" value="<" className={classes.navButton} />
 
-      <input type="button" value=">" />
+      <div className={classes.navBtn}>
+        <ul className={classes.pageList}>
+          {totalPageData.map((pageData, index) => (
+            <PageNavigationBtn key={index} pageData={pageData} index={index} />
+          ))}
+        </ul>
+      </div>
+      
+      <input type="button" value=">" className={classes.navButton} />
     </div>
   );
 }

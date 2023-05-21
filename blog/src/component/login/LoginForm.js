@@ -23,6 +23,8 @@ function LoginForm() {
   const inputUserName = useRef();
   const inputUserPassword = useRef();
 
+
+  //로그인 버튼 클릭
   function onSubmitLogin(event) {
     event.preventDefault();
     const enterUserName = inputUserName.current.value;

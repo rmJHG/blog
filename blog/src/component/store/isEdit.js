@@ -18,11 +18,14 @@ export function EditContextProvider(props) {
     setPageRefresh(pageRefresh * -1);
   }
 
+  //게시글의 정보를 얻어 수정 컴포넌트 생성함수
   function setOpenEdit(data) {
     setPostId(data.id);
     setPostData(data);
     setIsOpenEdit(true);
   }
+
+  //수정 컴포넌트 끄기함수
   function setExitEdit() {
     setIsOpenEdit(false);
     refresh();

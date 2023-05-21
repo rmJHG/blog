@@ -8,10 +8,12 @@ const UserLoginInfo = createContext({
 
 export function UserLoginInfoProvider(props) {
   const [isLogin, setIsLogin] = useState(false);
+
+  //로그인 확인함수
   function userOnline() {
     setIsLogin(true);
   }
-
+  //로그아웃 확인함수
   function userOffline() {
     setIsLogin(false);
   }
