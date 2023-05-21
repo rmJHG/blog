@@ -22,21 +22,25 @@ function PageNavigation(props) {
     }
     totalPageData.push(pageData);
   }
-  // console.log(totalPageData);
+  console.log(totalPageData);
 
   return (
     <div className={classes.pageNav}>
-      <input type="button" value="<" className={classes.navButton} />
+      <div>pageNav</div>
 
-      <div className={classes.navBtn}>
-        <ul className={classes.pageList}>
-          {totalPageData.map((pageData, index) => (
-            <PageNavigationBtn key={index} pageData={pageData} index={index} />
-          ))}
-        </ul>
+      <div>
+        <input type="button" value="<" className={classes.navButton} />
+
+        <div className={classes.pageNavBtn}>
+          <ul className={classes.pageList}>
+            {totalPageData.map((pageData, index) => (
+              <PageNavigationBtn key={index} pageData={pageData} index={index} />
+            ))}
+          </ul>
+        </div>
+
+        <input type="button" value=">" className={classes.navButton} />
       </div>
-      
-      <input type="button" value=">" className={classes.navButton} />
     </div>
   );
 }

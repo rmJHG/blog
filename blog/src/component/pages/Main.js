@@ -1,5 +1,5 @@
 import PostList from "../post/PostList";
-import PageNavigation from "../layout/PageNavigation";
+import PageNavigation from "../pageNav/PageNavigation";
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import EditInfo from "../store/isEdit";
@@ -37,8 +37,8 @@ function Main() {
   }
   return (
     <div>
-      <PostList postData={post} />
       <PageNavigation postData={post} />
+      <PostList postData={post} />
     </div>
   );
 }
