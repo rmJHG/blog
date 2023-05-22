@@ -1,45 +1,57 @@
-import PageNavigationBtn from "./PageNavigationBtn";
 import classes from "./PageNavigation.module.css";
+import { useState } from "react";
+import PageBoard from "./PageBoard"
 
 function PageNavigation(props) {
+  const [postTitle, setPostTitle] = useState([]);
   let totalPosts = Math.ceil(props.postData.length / 10);
   let postsPerPage = 10;
-
+  
   const totalPageData = [];
-
+  
+  //게시글 데이터 10개씩 분리
   for (let i = 0; i < totalPosts; i++) {
     const pageData = [];
-
+    
     if (i === totalPosts - 1) {
       postsPerPage = props.postData.length % 10;
     }
     for (let j = 10 * i; j < 10 * i + postsPerPage; j++) {
       const post = {
-        id: props.postData[j],
+        id: props.postData[j].id,
+        title: props.postData[j].title,
       };
-
+      
       pageData.push(post);
     }
     totalPageData.push(pageData);
   }
-  console.log(totalPageData);
+  
+  
+  setPostTitle(totalPageData[1])
+  
+  console.log(postTitle)
+ 
 
+  
+  function navLeftClick() {}
+  function navRightClick() {}
+
+
+
+  
   return (
     <div className={classes.pageNav}>
-      <div>pageNav</div>
+      <ul>
+        {totalPageData[1].map((res) => (
+          <PageBoard key={res.id} title={res.title}/>
+        ))}
+      </ul>
 
       <div>
-        <input type="button" value="<" className={classes.navButton} />
+        <input type="button" value="<" className={classes.navButton} onClick={navLeftClick} />
 
-        <div className={classes.pageNavBtn}>
-          <ul className={classes.pageList}>
-            {totalPageData.map((pageData, index) => (
-              <PageNavigationBtn key={index} pageData={pageData} index={index} />
-            ))}
-          </ul>
-        </div>
-
-        <input type="button" value=">" className={classes.navButton} />
+        <input type="button" value=">" className={classes.navButton} onClick={navRightClick} />
       </div>
     </div>
   );

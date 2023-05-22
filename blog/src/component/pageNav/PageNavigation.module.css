@@ -10,9 +10,7 @@
   cursor: pointer;
 }
 
-.navBtn {
 
-}
 
 .pageList {
   display: flex;
@@ -32,5 +30,3 @@
   border-radius: 4px;
 }
 
-.pageList li a:hover {
-}

@@ -8,7 +8,7 @@ export function PostContextProvider(props) {
   // 게시글 데이터 가져오기
   function getPostData(data) {
     setPostData(data);
-    console.log("get data", data)
+    // console.log("get data", data)
   }
 
   const PostContextData = {
