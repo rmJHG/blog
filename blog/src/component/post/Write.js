@@ -41,7 +41,7 @@ function Write() {
       <form name="form2" onSubmit={AddPost} className={classes.form}>
         <div className={classes.title}>
           {/* <label htmlFor="title">제목</label> */}
-          <input type="text" id="title" ref={inputTitle} placeholder="제목" />
+          <input type="text" id="title" ref={inputTitle} placeholder="제목" maxLength="30" />
         </div>
 
         <div className={classes.text}>
