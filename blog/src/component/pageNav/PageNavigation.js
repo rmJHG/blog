@@ -34,15 +34,12 @@ function PageNavigation(props) {
       setCurrentPage(currentPage - 1);
       setPostTitle(totalPageData[currentPage - 1]);
     }
-
-  
   }
   function navRightClick() {
     if (currentPage < totalPageData.length - 1) {
       setCurrentPage(currentPage + 1);
       setPostTitle(totalPageData[currentPage + 1]);
     }
-
   }
 
   return (
