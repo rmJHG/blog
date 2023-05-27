@@ -2,7 +2,7 @@ import PostList from "../post/PostList";
 import PageNavigation from "../pageNav/PageNavigation";
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import EditInfo from "../store/isEdit";
+import EditInfo from "../contexts/EditContext";
 
 function Main() {
   const [post, setPost] = useState([]);

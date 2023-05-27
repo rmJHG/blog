@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useContext } from "react";
-import UserLoginInfo from "../store/isLogin";
-import EditInfo from "../store/isEdit";
+import UserLoginInfo from "../contexts/UserLoginContext";
+import EditInfo from "../contexts/EditContext";
 import classes from "./Post.module.css";
 
 function Post(props) {

@@ -1,7 +1,7 @@
 import classes from "./PostList.module.css";
 import Post from "./Post";
 import Edit from "./Edit";
-import EditInfo from "../store/isEdit";
+import EditInfo from "../contexts/EditContext";
 import { useContext } from "react";
 
 function PostList(props) {

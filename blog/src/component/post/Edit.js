@@ -1,6 +1,6 @@
 import classes from "./Edit.module.css";
 import { useContext, useRef } from "react";
-import EditInfo from "../store/isEdit";
+import EditInfo from "../contexts/EditContext";
 import axios from "axios";
 
 function Edit(props) {

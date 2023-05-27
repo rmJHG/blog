@@ -14,8 +14,9 @@ export function EditContextProvider(props) {
   const [isOpenEdit, setIsOpenEdit] = useState(false);
   const [postId, setPostId] = useState(0);
   const [postData, setPostData] = useState();
+
   function refresh() {
-    setPageRefresh(prevRefresh => prevRefresh * -1);
+    setPageRefresh((prevRefresh) => prevRefresh * -1);
   }
 
   //게시글의 정보를 얻어 수정 컴포넌트 생성함수

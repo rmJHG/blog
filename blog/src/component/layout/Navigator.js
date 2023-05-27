@@ -1,6 +1,6 @@
 import classes from "./navigator.module.css";
 import { Link } from "react-router-dom";
-import UserLoginInfo from "../store/isLogin";
+import UserLoginInfo from "../contexts/UserLoginContext";
 import { useContext } from "react";
 
 function Navigator() {
