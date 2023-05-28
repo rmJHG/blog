@@ -1,16 +1,30 @@
 .pageNav {
   display: grid;
   justify-items: center;
+  color: #fff;
+  border-top: 1px solid #6a6a6a;
+  border-bottom:  1px solid #6a6a6a;
+  margin-top: 1rem;
+}
+.pageNav ul {
+  margin: 1rem 0;
+  
 }
 
 .navButton {
-  font-size: 5px;
+  font-size: 15px;
   padding: 10px 10px;
-  border: none;
+  margin-bottom: 1rem;
+  border: 1px;
   cursor: pointer;
+  background: none;
+  color: #fff;
 }
 
 
+.navButton:hover {
+  border: 1px solid #6a6a6a;
+}
 
 .pageList {
   display: flex;
@@ -25,8 +39,7 @@
 
 .pageList li a {
   text-decoration: none;
-  color: #333;
+  color: #fff;
   padding: 8px;
   border-radius: 4px;
 }
-

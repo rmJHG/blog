@@ -19,4 +19,4 @@ export function PostContextProvider(props) {
   return <PostContext.Provider value={PostContextData}>{props.children}</PostContext.Provider>;
 }
 
-export default PostContext;
+// export default PostContext;

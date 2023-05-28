@@ -6,6 +6,9 @@ import Write from "./component/post/Write";
 import Layout from "./component/layout/Layout";
 
 function App() {
+
+
+  
   return (
     <Layout>
       <Routes>

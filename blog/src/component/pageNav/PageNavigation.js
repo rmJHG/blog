@@ -52,7 +52,6 @@ function PageNavigation(props) {
 
       <div>
         <input type="button" value="<" className={classes.navButton} onClick={navLeftClick} />
-
         <input type="button" value=">" className={classes.navButton} onClick={navRightClick} />
       </div>
     </div>
