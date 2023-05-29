@@ -3,6 +3,7 @@ import { useState } from "react";
 import PageBoard from "./PageBoard";
 
 function PageNavigation(props) {
+
   const totalPageData = [];
 
   let totalPosts = Math.ceil(props.postData.length / 10);
@@ -19,6 +20,7 @@ function PageNavigation(props) {
       const post = {
         id: props.postData[j].id,
         title: props.postData[j].title,
+        date:props.postData[j].date.substr(0, 10),
       };
 
       pageData.push(post);
@@ -46,7 +48,7 @@ function PageNavigation(props) {
     <div className={classes.pageNav}>
       <ul>
         {postTitle.map((res) => (
-          <PageBoard key={res.id} title={res.title} />
+          <PageBoard key={res.id} title={res.title} date={res.date}/>
         ))}
       </ul>
 

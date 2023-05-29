@@ -8,7 +8,8 @@
 }
 .pageNav ul {
   margin: 1rem 0;
-  
+  width: 15rem;
+  height: 13rem;
 }
 
 .navButton {
@@ -23,7 +24,7 @@
 
 
 .navButton:hover {
-  border: 1px solid #6a6a6a;
+ outline: 1px solid #6a6a6a;
 }
 
 .pageList {

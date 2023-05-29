@@ -21,12 +21,14 @@ function Write() {
     event.preventDefault();
     const enterTitle = inputTitle.current.value;
     const enterText = inputText.current.value;
+    const date = new Date()
 
     axios("https://myblog-jhg-default-rtdb.firebaseio.com/post.json", {
       method: "POST",
       data: {
         title: enterTitle,
         text: enterText,
+        date: date,
       },
       header: {
         "Content-Type": "application/json",

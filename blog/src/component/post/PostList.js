@@ -12,7 +12,7 @@ function PostList(props) {
     <ul className={classes.postList}>
       {openEditStatus && <Edit />}
       {props.postData.map((post) => (
-        <Post postList={props} id={post.id} title={post.title} text={post.text} />
+        <Post key={post.id} postList={props} id={post.id} title={post.title} text={post.text} />
       ))}
     </ul>
   );
